@@ -17,7 +17,7 @@ const Navbar = () => {
   return (
     <nav className="navBar">
       <h1>
-        Bookstore 
+        Bookstore
       </h1>
       <ul>
         {links.map((link) => (
