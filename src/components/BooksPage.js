@@ -1,21 +1,21 @@
 import React from 'react';
 import BooksForm from './BooksForm';
-import Books from './Books';
+import Books from './Book';
 
 const BooksPage = () => {
   const books = [{
-    title: 'ahmad',
-    author: 'zaki',
+    title: 'stan',
+    author: 'mega',
     id: 1,
   },
   {
-    title: 'zia',
+    title: 'mega',
     author: 'zaki',
     id: 2,
   },
   {
     title: 'sharif',
-    author: 'zia',
+    author: 'mega',
     id: 3,
   }];
   return (
