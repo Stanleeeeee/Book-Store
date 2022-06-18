@@ -1,50 +1,48 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useRef } from 'react';
+import { useDispatch } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
-const Book = ({ title, author, deleteBook }) => (
-  <div className="book">
-    <div className="bookDetails">
-      <div>
-        <small className="bookCategory">Action</small>
-        <h2 className="bookTitle">{title}</h2>
-        <p className="bookAuthor">{author}</p>
-        <div className="actionBtn">
-          <button type="button">Comments</button>
-          <button type="button" onClick={deleteBook}>
-            Remove
-          </button>
-          <button type="button">Edit</button>
-        </div>
-      </div>
-      <div className="readingProgress">
-        <div className="oval-2">
-          <div className="circle" />
-        </div>
-        <div>
-          <p className="percentage">64%</p>
-          <p className="progressCompleted">Completed</p>
-        </div>
-      </div>
+const AddBook = () => {
+  const titleRef = useRef();
+  const authorRef = useRef();
+  const dispatch = useDispatch();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newBook = {
+      item_id: uuidv4(),
+      title: titleRef.current.value,
+      author: authorRef.current.value,
+      category: 'category',
+    };
+    dispatch();
+    titleRef.current.value = '';
+    authorRef.current.value = '';
+  };
+
+  return (
+    <div>
+      <span className="title">ADD NEW BOOK</span>
+      <form onSubmit={(e) => handleSubmit(e)} className="input__book">
+        <input
+          ref={titleRef}
+          type="text"
+          name="title"
+          placeholder="Book title"
+          className="panel-bg "
+        />
+        <input
+          ref={authorRef}
+          type="text"
+          name="author"
+          placeholder="Author"
+          className="panel-bg "
+        />
+        <button type="submit" className="btn_blue2" value="Add book">
+          ADD BOOK
+        </button>
+      </form>
     </div>
-
-    <div className="progress">
-      <p className="progressCompleted">CURRENT CHAPTER</p>
-      <p className="currentChapter">Chapter 17</p>
-      <button type="button" className="btn_blue">
-        UPDATE PROGESS
-      </button>
-    </div>
-  </div>
-);
-
-Book.propTypes = {
-  title: PropTypes.string,
-  author: PropTypes.string,
-  deleteBook: PropTypes.func.isRequired,
+  );
 };
 
-Book.defaultProps = {
-  title: '',
-  author: '',
-};
-export default Book;
+export default AddBook;

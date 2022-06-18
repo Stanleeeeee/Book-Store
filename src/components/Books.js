@@ -1,35 +1,25 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchBook, removeBook } from '../redux/books/books';
-import AddBook from './AddBook';
-import Book from './Book';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const Books = () => {
-  const books = useSelector((state) => state.bookList);
-  const dispatch = useDispatch();
-
-  const handleDeleteBook = (id) => {
-    dispatch(removeBook(id));
+const Book = ({ title, author }) => {
+  Book.propTypes = {
+    title: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
   };
-
-  useEffect(() => {
-    dispatch(fetchBook());
-  }, []);
-
   return (
-    <div className="container">
-      {books.map((book) => (
-        <Book
-          key={book.item_id}
-          title={book.title}
-          author={book.author}
-          deleteBook={() => handleDeleteBook(book.item_id)}
-        />
-      ))}
-      <hr className="line" />
-      <AddBook />
-    </div>
+    <li>
+      <div>
+        <h2>
+          Book title:
+          {title}
+        </h2>
+        <p>
+          Book author:
+          {author}
+        </p>
+      </div>
+    </li>
   );
 };
 
-export default Books;
+export default Book;

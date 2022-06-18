@@ -1,21 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { CgProfile } from 'react-icons/cg';
 
-function Navbar() {
-  return (
-    <div className="navbar">
-      <nav className="navigation">
-        <h1 className="header-text">Bookstore CMS</h1>
-        <Link to="/" className="link">
-          BOOKS
-        </Link>
-        <Link to="/category" className="link">
-          CATEGORY
-        </Link>
-      </nav>
-      <CgProfile className="profile" />
-    </div>
-  );
-}
-export default Navbar;
+const BooksForm = () => (
+  <form>
+    <input
+      type="text"
+      placeholder="Book title"
+      name="title"
+    />
+    <input
+      type="text"
+      placeholder="Book Author"
+      name="author"
+    />
+    <button type="button">
+      Add Book
+    </button>
+  </form>
+);
+
+export default BooksForm;
