@@ -1,5 +1,5 @@
-const ADD_BOOK = 'book-store/books/ADD_BOOK';
-const REMOVE_BOOK = 'book-store/books/REMOVE_BOOK';
+const ADD_BOOK = './books/ADD_BOOK';
+const REMOVE_BOOK = './books/REMOVE_BOOK';
 
 const initialBook = [];
 
