@@ -1,6 +1,9 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addBook } from '../redux/books/books';
 
 const AddBook = () => {
+  const dispatch = useDispatch();
   const [infor, setInfor] = useState({ books: '', author: '' });
 
   const inputData = (e) => {
@@ -17,8 +20,6 @@ const AddBook = () => {
     }
   };
 
-  const storeData = () => {};
-
   return (
     <>
       <div className="add-container">
@@ -26,7 +27,7 @@ const AddBook = () => {
         <form action="#" method="post">
           <input type="text" name="title" placeholder="Book Title" onChange={inputData} />
           <input type="text" name="author" placeholder="Book Author" onChange={inputData} />
-          <button type="button" onClick={storeData}>Add Book</button>
+          <button type="button" onClick={() => dispatch(addBook(infor))}>Add Book</button>
         </form>
 
       </div>
