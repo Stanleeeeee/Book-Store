@@ -1,12 +1,12 @@
-import { createSlice, combineReducers } from '@reduxjs/toolkit';
+import { createStore, combineReducers } from 'redux';
 import bookReducer from './books/books';
-import checkStatusReducer from './categories/categories';
+import checkStatusReducer from './categories/category';
 
 const reducer = combineReducers({
   bookReducer,
   checkStatusReducer,
 });
 
-const store = createSlice(reducer);
+const store = createStore(reducer);
 
 export default store;
