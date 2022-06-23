@@ -1,6 +1,6 @@
 import { configureStore, combineReducers } from 'redux';
-import bookReducer from './books/books';
-import checkStatusReducer from './categories/category';
+import bookReducer from './src/redux/books/books';
+import checkStatusReducer from './src/redux/categories/category';
 
 const reducer = combineReducers({
   bookReducer,

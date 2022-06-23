@@ -1,4 +1,4 @@
-const CHECK_STATUS = './categories/CHECK_STATUS';
+const CHECK_STATUS = './src/redux/categories/CHECK_STATUS';
 
 const checkStatusReducer = (state = [], action) => {
   switch (action.type) {

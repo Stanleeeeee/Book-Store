@@ -1,5 +1,5 @@
-const ADD_BOOK = './books/ADD_BOOK';
-const REMOVE_BOOK = './books/REMOVE_BOOK';
+const ADD_BOOK = './src/redux/books/ADD_BOOK';
+const REMOVE_BOOK = './src/redux/books/REMOVE_BOOK';
 
 const initialBook = [];
 
