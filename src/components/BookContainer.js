@@ -4,8 +4,7 @@ import BookContent from './Book';
 import AddBook from './AddBook';
 
 const BookContainer = () => {
-  const infor = useSelector((state) => state.bookReducer);
-  const books = infor;
+  const books = useSelector((state) => state.bookReducer);
   return (
     <div className="main-container">
       <BookContent books={books} />
@@ -13,4 +12,5 @@ const BookContainer = () => {
     </div>
   );
 };
+
 export default BookContainer;
