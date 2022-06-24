@@ -5,19 +5,19 @@ const initialBook = [
   {
     id: 1,
     author: 'Daniel Banda',
-    books: 'The fierce village',
+    title: 'The fierce village',
     category: '',
   },
   {
     id: 2,
     author: 'Gofrey Zimba',
-    books: 'Good deeds',
+    title: 'Good deeds',
     category: '',
   },
   {
     id: 3,
     author: 'Mathews Zulu',
-    books: 'The old village',
+    title: 'The old village',
     category: '',
   },
 ];
@@ -28,7 +28,7 @@ const bookReducer = (state = initialBook, action) => {
       const objBook = {
         id: state.length + 1,
         author: action.book.author,
-        books: action.book.books,
+        title: action.book.title,
       };
       return [...state, objBook];
     }
