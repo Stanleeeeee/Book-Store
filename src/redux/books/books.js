@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const ADD_BOOK = 'book-store/books/ADD_BOOK';
-const REMOVE_BOOK = 'book-store/books/REMOVE_BOOK';
-const FETCH_BOOK = 'book-store/books/FETCH_BOOK';
+const ADD_BOOK = './books/ADD_BOOK';
+const REMOVE_BOOK = './books/REMOVE_BOOK';
+const FETCH_BOOK = './books/FETCH_BOOK';
 
 const baseUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/ZOJqFCh93ZI0Xzzf10vz/books';
 
