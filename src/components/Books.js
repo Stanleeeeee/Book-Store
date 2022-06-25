@@ -26,7 +26,7 @@ const Books = ({ book }) => {
         </div>
       </div>
       <div className="prgs">
-        <div className="circular-progressbar" style={{ width: 100, height: 100 }}>
+        <div className="circular-progressbar">
           <CircularProgressbar className="pgs" value={percentage} />
         </div>
         <div className="progres-sec">

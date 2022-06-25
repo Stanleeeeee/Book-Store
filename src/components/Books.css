@@ -21,10 +21,17 @@
 }
 
 .title {
-  text-transform: capitalize;
-  color: #000;
-  font-size: 20px;
-  font-weight: 700;
+  width: 12.313rem;
+  height: 1.813rem;
+  margin: 0.188rem 20.188rem 0 0;
+  font-family: RobotoSlab;
+  font-size: 1.375rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.2px;
+  color: #121212;
 }
 
 .author {
@@ -45,6 +52,11 @@
   border: none;
   color: skyblue;
   padding: 5px;
+}
+
+.circular-progressbar {
+    width: 100px;
+    height: 100px;
 }
 
 .border {
@@ -131,11 +143,23 @@
     font-weight: 600;
   }
 
+  .circular-progressbar {
+    width: 100px;
+    height: 100px;
+  }
+
   .title {
-    text-transform: capitalize;
-    color: #000;
-    font-size: 20px;
-    font-weight: 700;
+    width: 12.313rem;
+    height: 1.813rem;
+    margin: 0.188rem 20.188rem 0 0;
+    font-family: RobotoSlab;
+    font-size: 1.375rem;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.2px;
+    color: #121212;
   }
 
   .author {
