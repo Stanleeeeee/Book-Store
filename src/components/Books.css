@@ -122,7 +122,7 @@
 @media (max-width: 768px) {
   .books-contents {
     width: 73rem;
-}
+  }
 
   .category {
     text-transform: uppercase;
