@@ -13,6 +13,7 @@ h2 {
 
 form {
   width: 100%;
+
   /* margin: auto; */
   display: flex;
   justify-content: center;
@@ -26,6 +27,7 @@ form {
   width: 21.5rem;
   height: 2.813rem;
   margin: 10px;
+
   /* margin: 1.188rem 2.125rem 0 0;
   padding: 0.813rem 35.688rem 0.813rem 1.063rem; */
   border-radius: 4px;
