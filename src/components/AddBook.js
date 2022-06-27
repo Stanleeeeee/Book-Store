@@ -25,13 +25,21 @@ const AddBook = () => {
       <div className="add-container">
         <h2>ADD NEW BOOK</h2>
         <form action="#" method="post">
-          <input 
-              type="text" 
-              name="title" 
-              placeholder="Book Title"
-              onChange={inputData} required />
-          <input type="text" name="author" placeholder="Book Author" onChange={inputData} required />
-          <button type="button" onClick={() => dispatch(addBook(infor))}>Add Book</button>
+          <input
+            type="text"
+            name="title"
+            placeholder="Book Title"
+            onChange={inputData} required
+          />
+          <input
+            type="text"
+            name="author"
+            placeholder="BookAuthor"
+            onChange={inputData} required 
+          />
+          <button type="button" onClick={() => dispatch(addBook(infor))}>
+            Add Book
+          </button>
         </form>
 
       </div>
