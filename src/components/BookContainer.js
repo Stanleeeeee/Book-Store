@@ -1,22 +1,10 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import BookContent from './Book';
 import AddBook from './AddBook';
 
 const BookContainer = () => {
-  const books = [
-    {
-      title: 'The demon',
-      author: 'Micheal',
-      id: 1,
-      category: 'Novel',
-    },
-    {
-      title: 'City story',
-      author: 'Adams',
-      id: 2,
-      category: 'Novel',
-    },
-  ];
+  const books = useSelector(state => (state.bookReducer));
 
   return (
     <div className="main-container">
@@ -25,4 +13,5 @@ const BookContainer = () => {
     </div>
   );
 };
+
 export default BookContainer;
