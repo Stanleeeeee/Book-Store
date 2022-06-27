@@ -1,22 +1,38 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Book from './Book';
 
-const Books = ({ books }) => {
-  Books.propTypes = {
-    books: PropTypes.array.isRequired, // eslint-disable-line react/forbid-prop-types
-  };
+const Books = (props) => {
+  const {
+    book: {
+      title,
+      author,
+      id,
+      category,
+    },
+
+  } = props;
+
   return (
-    <ul>
-      {books.map((book) => (
-        <Book
-          key={book.id}
-          title={book.title}
-          author={book.author}
-        />
-      ))}
-    </ul>
+    <>
+      <li key={id} className="books-content">
+        {title}
+        {' by '}
+        {author}
+        {' - '}
+        {category}
+      </li>
+      <button type="button" id={id}>Remove</button>
+    </>
   );
+};
+
+Books.propTypes = {
+  book: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Books;
