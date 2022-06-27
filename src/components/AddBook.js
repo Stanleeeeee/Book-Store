@@ -29,13 +29,15 @@ const AddBook = () => {
             type="text"
             name="title"
             placeholder="Book Title"
-            onChange={inputData} required
+            onChange={inputData}
+            required
           />
           <input
             type="text"
             name="author"
             placeholder="BookAuthor"
-            onChange={inputData} required 
+            onChange={inputData}
+            required
           />
           <button type="button" onClick={() => dispatch(addBook(infor))}>
             Add Book

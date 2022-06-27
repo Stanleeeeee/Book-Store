@@ -17,7 +17,7 @@ const Books = ({ book }) => {
         {item.category}
       </li>
 
-      <button type="button" id={id} onClick={()=> dispatch(removeBook(id))}>
+      <button type="button" id={id} onClick={() => dispatch(removeBook(id))}>
         Remove
       </button>
     </>
