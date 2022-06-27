@@ -1,5 +1,5 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
-import logger from 'redux-logger';
+import thunk from 'redux-thunk';
 import bookReducer from './books/books';
 import checkStatusReducer from './categories/category';
 
@@ -8,6 +8,5 @@ const reducer = combineReducers({
   checkStatusReducer,
 });
 
-const store = createStore(reducer, applyMiddleware(logger));
-
+const store = createStore(reducer, applyMiddleware(thunk));
 export default store;

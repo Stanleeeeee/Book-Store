@@ -1,43 +1,42 @@
-const ADD_BOOK = './src/redux/books/ADD_BOOK';
-const REMOVE_BOOK = './src/redux/books/REMOVE_BOOK';
+import axios from 'axios';
 
-const initialBook = [
-  {
-    id: 1,
-    author: 'Daniel Banda',
-    title: 'The fierce village',
-    category: '',
-  },
-  {
-    id: 2,
-    author: 'Gofrey Zimba',
-    title: 'Good deeds',
-    category: '',
-  },
-  {
-    id: 3,
-    author: 'Mathews Zulu',
-    title: 'The old village',
-    category: '',
-  },
-];
+const ADD_BOOK = './books/ADD_BOOK';
+const REMOVE_BOOK = './books/REMOVE_BOOK';
+const FETCH_BOOK = './books/FETCH_BOOK';
+
+const baseUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/ZOJqFCh93ZI0Xzzf10vz/books';
+
+const initialBook = [];
 
 const bookReducer = (state = initialBook, action) => {
   switch (action.type) {
     case ADD_BOOK: {
       const objBook = {
-        id: state.length + 1,
+        item_id: `book${Date.now()}`,
+        title: action.book.book,
         author: action.book.author,
-        title: action.book.title,
+        category: 'fiction',
       };
-      return [...state, objBook];
+      const newState = [`book${Date.now()}`, [{
+        title: action.book.book,
+        author: action.book.author,
+        category: 'fiction',
+      }]];
+
+      axios.post(baseUrl, objBook);
+      // console.log(state);
+      return [...state, newState];
     }
 
     case REMOVE_BOOK: {
-      const remove = state.filter((book) => book.id !== action.id);
+      axios.delete(`${baseUrl}/${action.id}`);
+      const remove = state.filter((book) => book[0] !== action.id);
 
       return remove;
     }
+
+    case FETCH_BOOK:
+      return action.newBook;
 
     default:
       return state;
@@ -48,4 +47,13 @@ export const addBook = (book) => ({ type: ADD_BOOK, book });
 export const removeBook = (id) => ({
   type: REMOVE_BOOK, id,
 });
+
+export const fetchBook = () => (dispatch) => {
+  axios.get(baseUrl).then((response) => {
+    const data = Object.entries(response.data);
+    dispatch({
+      type: FETCH_BOOK, newBook: data,
+    });
+  });
+};
 export default bookReducer;

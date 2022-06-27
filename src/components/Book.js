@@ -2,22 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Books from './Books';
 
-const BookContent = ({ title }) => (
+const BookContent = ({ books }) => (
   <ul className="book-content">
-
-    {title.map(book => (
-    <Books key={book.id} book={book} />
-  ))}
+    {
+books.map((book) => <Books key={book.item_id} book={book} />)
+}
   </ul>
 
 );
 BookContent.propTypes = {
-  title: PropTypes.arrayOf(
+  books: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
-      books: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
       author: PropTypes.string.isRequired,
-      category: PropTypes.string,
+      category: PropTypes.string.isRequired,
     }).isRequired,
   ).isRequired,
 };
