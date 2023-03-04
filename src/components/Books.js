@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import { removeBook } from '../redux/books/books';
-import './Books.css';
+import '../styles/Books.css';
 import 'react-circular-progressbar/dist/styles.css';
 
 const Books = ({ book }) => {
@@ -20,9 +20,21 @@ const Books = ({ book }) => {
           <span className="author">{item.author}</span>
         </li>
         <div className="buttons">
-          <button type="button" className="btn border"> Comment</button>
-          <button type="button" className="btn border" id={id} onClick={() => dispatch(removeBook(id))}>Remove</button>
-          <button type="button" className="btn">Edit</button>
+          <button type="button" className="btn border">
+            {' '}
+            Comment
+          </button>
+          <button
+            type="button"
+            className="btn border"
+            id={id}
+            onClick={() => dispatch(removeBook(id))}
+          >
+            Remove
+          </button>
+          <button type="button" className="btn">
+            Edit
+          </button>
         </div>
       </div>
       <div className="prgs">
@@ -31,17 +43,23 @@ const Books = ({ book }) => {
         </div>
         <div className="progres-sec">
           <span className="percentage">
-            {`${percentage}%`}
+            <h2 className="percentage">
+              {Math.floor(Math.random() * 101)}
+              %
+            </h2>
           </span>
-          <span className="completed">
-            Completed
-          </span>
+          <span className="completed">Completed</span>
         </div>
       </div>
       <div className="book-ch">
         <span className="current-chapt">CURRENT CHAPTER</span>
-        <span className="chapt">Chapter 17</span>
-        <button type="button" className="update-btn">UPDATE PROGRESS</button>
+        <h3 className="chapter">
+          Chapter
+          {Math.floor(Math.random() * 101)}
+        </h3>
+        <button type="button" className="update-btn">
+          UPDATE PROGRESS
+        </button>
       </div>
     </div>
   );
