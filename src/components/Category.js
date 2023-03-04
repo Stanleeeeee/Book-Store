@@ -1,15 +1,20 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { checkStatus } from '../redux/categories/category';
+import '../styles/categories.css';
 
 const Categories = () => {
-  const checking = useSelector((state) => state.checkStatusReducer);
   const dispatch = useDispatch();
+  const status = useSelector((state) => state.categories);
+  const checkForStatus = () => {
+    dispatch(checkStatus());
+  };
   return (
-    <>
-      <h1>{checking}</h1>
-      <button type="button" onClick={() => dispatch(checkStatus())}>Check status</button>
-    </>
+    <div className="categoriesPage">
+      <p>{status}</p>
+      <button type="button" onClick={checkForStatus} className="checkStatus">
+        CHECK STATUS
+      </button>
+    </div>
   );
 };
 

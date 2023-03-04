@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import { removeBook } from '../redux/books/books';
-import './Books.css';
+import '../styles/Books.css';
 import 'react-circular-progressbar/dist/styles.css';
 
 const Books = ({ book }) => {
@@ -31,7 +31,10 @@ const Books = ({ book }) => {
         </div>
         <div className="progres-sec">
           <span className="percentage">
-            {`${percentage}%`}
+          <h2 className="percentage">
+              {Math.floor(Math.random() * 101)}
+              %
+            </h2>
           </span>
           <span className="completed">
             Completed
@@ -40,7 +43,10 @@ const Books = ({ book }) => {
       </div>
       <div className="book-ch">
         <span className="current-chapt">CURRENT CHAPTER</span>
-        <span className="chapt">Chapter 17</span>
+        <h3 className="chapter">
+            Chapter
+            {Math.floor(Math.random() * 101)}
+          </h3>
         <button type="button" className="update-btn">UPDATE PROGRESS</button>
       </div>
     </div>

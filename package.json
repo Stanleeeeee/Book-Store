@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/material": "^5.11.11",
     "@reduxjs/toolkit": "^1.8.2",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
@@ -10,7 +13,7 @@
     "axios": "^0.27.2",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
-    "react-circular-progressbar": "^2.0.4",
+    "react-circular-progressbar": "^2.1.0",
     "react-dom": "^18.2.0",
     "react-fetch": "^0.0.9",
     "react-icons": "^4.4.0",

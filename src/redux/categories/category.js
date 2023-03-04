@@ -1,10 +1,9 @@
-const CHECK_STATUS = './src/redux/categories/CHECK_STATUS';
+const CHECK_STATUS = 'CHECK_STATUS';
 
-const checkStatusReducer = (state = [], action) => {
+const checkStatusReducer = (state = '', action) => {
   switch (action.type) {
     case CHECK_STATUS:
       return 'Under construction';
-
     default:
       return state;
   }

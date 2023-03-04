@@ -10,6 +10,7 @@ const BookContainer = ({ fetchBooks }) => {
   const books = infor;
   useEffect(() => {
     fetchBooks();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
