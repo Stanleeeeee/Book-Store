@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-import { addNewBook } from '../redux/books/books';
+import { addBook } from '../redux/books/books';
 import '../styles/form.css';
 
 const categories = [
@@ -33,7 +33,7 @@ const Form = () => {
 
   const addBookToList = () => {
     dispatch(
-      addNewBook({
+      addBook({
         title,
         author,
         id,

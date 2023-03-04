@@ -38,6 +38,6 @@ function AddBook() {
       </div>
     </>
   );
-};
+}
 
 export default AddBook;
