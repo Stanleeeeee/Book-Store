@@ -63,7 +63,7 @@ npx eslint .
 
 - GitHub: [@Stanleeeeee](https://github.com/Stanleeeeee)
 - Twitter: [@Stanmega89](https://twitter.com/Stanmega89)
-- LinkedIn: [@stanley-ezeoke](https://www.linkedin.com/in/stanley-ezeoke-898b7b115/)
+- LinkedIn: [@stanley-ezeoke](https://www.linkedin.com/in/stanley-ezeoke)
 
 
 ## Show your support
