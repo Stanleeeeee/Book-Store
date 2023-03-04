@@ -12,7 +12,7 @@ const Books = ({ book }) => {
   const percentage = 66;
 
   return (
-    <div className='books-contents'>
+    <div className="books-contents">
       <div className="first">
         <li key={id} className="book-cont">
           <span className="category">{item.category}</span>
@@ -28,7 +28,8 @@ const Books = ({ book }) => {
             type="button"
             className="btn border"
             id={id}
-            onClick={() => dispatch(removeBook(id))}>
+            onClick={() => dispatch(removeBook(id))}
+          >
             Remove
           </button>
           <button type="button" className="btn">
